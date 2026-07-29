@@ -3,6 +3,7 @@ set -Eeuo pipefail
 
 root=/home/ai/projects/ssp-tulu-repro
 session=ssp-tulu-runner
+source "${root}/scripts/env.sh"
 
 if tmux has-session -t "${session}" 2>/dev/null; then
   echo "tmux session already exists: ${session}"
@@ -17,4 +18,3 @@ tmux new-session -d -s "${session}" \
 sleep 1
 tmux has-session -t "${session}"
 tmux capture-pane -pt "${session}" -S -40
-
