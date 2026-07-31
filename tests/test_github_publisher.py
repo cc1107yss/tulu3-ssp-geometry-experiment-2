@@ -3,6 +3,8 @@ import json
 import subprocess
 from pathlib import Path
 
+import pytest
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -120,3 +122,25 @@ def test_classification_is_explicit():
     decision, priority, _ = archive.classify(Path("outputs/training/A/seed-42/final_adapter/adapter_model.safetensors"))
     assert decision == "include"
     assert priority == 1
+
+
+def test_status_push_failure_retains_local_commit(tmp_path):
+    repo = tmp_path / "status"
+    repo.mkdir()
+    subprocess.run(["git", "init", "-q", "-b", "run-status", str(repo)], check=True)
+    subprocess.run(["git", "-C", str(repo), "config", "user.name", "fixture"], check=True)
+    subprocess.run(["git", "-C", str(repo), "config", "user.email", "fixture@example.com"], check=True)
+    (repo / "experiment-2.json").write_text("{}\n", encoding="utf-8")
+    subprocess.run(["git", "-C", str(repo), "add", "experiment-2.json"], check=True)
+    subprocess.run(["git", "-C", str(repo), "commit", "-qm", "initial"], check=True)
+    subprocess.run(["git", "-C", str(repo), "remote", "add", "origin", str(tmp_path / "missing.git")], check=True)
+    config = json.loads((ROOT / "ops/github-publisher/config.json").read_text())
+    payload = {
+        "observed_at": "2026-07-31T12:00:00+08:00",
+        "pipeline": {"current_stage": "fixture", "status": "RUNNING"},
+    }
+    before = subprocess.check_output(["git", "-C", str(repo), "rev-list", "--count", "HEAD"], text=True).strip()
+    with pytest.raises(RuntimeError, match="local commit retained"):
+        publisher.publish_snapshot(payload, repo, config)
+    after = subprocess.check_output(["git", "-C", str(repo), "rev-list", "--count", "HEAD"], text=True).strip()
+    assert int(after) == int(before) + 1
