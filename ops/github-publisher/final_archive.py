@@ -301,6 +301,17 @@ def main():
         raise RuntimeError("main archive clone is on unexpected branch {}".format(branch))
 
     archive_root = main_repo / "archive" / "experiment-2"
+    if state.get("phase") in {"BUILDING", "ERROR"}:
+        if archive_root.exists():
+            resolved = archive_root.resolve()
+            if resolved.name != "experiment-2" or resolved.parent.name != "archive":
+                raise RuntimeError("refusing to clean unexpected retry path: {}".format(resolved))
+            shutil.rmtree(str(archive_root))
+        attributes = main_repo / ".gitattributes"
+        committed_attributes = run(["git", "show", "HEAD:.gitattributes"], cwd=main_repo)
+        if committed_attributes.returncode == 0:
+            attributes.write_text(committed_attributes.stdout, encoding="utf-8")
+        state = update_state(state_path, "RETRY_READY", error=None, build_ready=False)
     if state.get("phase") not in {"BUILT", "COMMITTED"}:
         dirty = run(["git", "status", "--porcelain=v1"], cwd=main_repo, check=True).stdout.strip()
         if dirty:
