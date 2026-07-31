@@ -45,6 +45,7 @@ printf '%s\n' \
   "GITHUB_DEPLOY_KEY=${deploy_key}" \
   "GITHUB_KNOWN_HOSTS=${known_hosts}" \
   "GIT_SSH=${export_root}/git-ssh.sh" \
+  "TMUX_BINARY=${HOME}/.local/opt/tmux-3.0a/usr/bin/tmux" \
   "PATH=${export_root}/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
   "DISABLE_TIMER_ON_COMPLETE=1" >"${env_file}"
 chmod 0600 "${env_file}"

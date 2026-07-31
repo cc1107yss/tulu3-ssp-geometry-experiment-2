@@ -270,10 +270,13 @@ def build_snapshot(root, export_root, config):
         seconds_per_step = elapsed / global_step
         if max_steps and max_steps >= global_step:
             eta_seconds = (max_steps - global_step) * seconds_per_step
-    tmux_binary = shutil.which("tmux")
-    private_tmux = root / ".deps" / "tmux" / "bin" / "tmux"
-    if not tmux_binary and private_tmux.exists():
-        tmux_binary = str(private_tmux)
+    tmux_binary = os.environ.get("TMUX_BINARY") or shutil.which("tmux")
+    tmux_candidates = [
+        root / ".deps" / "tmux" / "bin" / "tmux",
+        Path.home() / ".local" / "opt" / "tmux-3.0a" / "usr" / "bin" / "tmux",
+    ]
+    if not tmux_binary:
+        tmux_binary = next((str(path) for path in tmux_candidates if path.exists()), None)
     tmux = run([tmux_binary or "tmux", "has-session", "-t", "ssp-tulu-runner"], timeout=10)
     usage = shutil.disk_usage(str(root))
     log_age = None
