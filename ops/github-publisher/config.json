@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "experiment_id": "experiment-2",
+  "study_name": "ssp-tulu-four-stage",
+  "repository": "cc1107yss/tulu3-ssp-geometry-experiment-2",
+  "planned_count": 109,
+  "status_branch": "run-status",
+  "status_filename": "experiment-2.json",
+  "log_tail_lines": 50,
+  "log_tail_bytes": 12288,
+  "status_max_bytes": 65536,
+  "lfs_budget_bytes": 8589934592,
+  "final_tag": "experiment-2-final-v1"
+}

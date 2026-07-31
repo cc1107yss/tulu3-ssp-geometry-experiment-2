@@ -10,3 +10,4 @@ status/
 logs/
 *.egg-info/
 组会材料/
+.publisher-runtime/

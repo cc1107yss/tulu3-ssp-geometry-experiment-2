@@ -1,0 +1,12 @@
+[Unit]
+Description=Hourly Tulu SSP Experiment 2 GitHub status snapshot
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=60min
+Persistent=true
+AccuracySec=1min
+Unit=ssp-tulu-github-publisher.service
+
+[Install]
+WantedBy=timers.target

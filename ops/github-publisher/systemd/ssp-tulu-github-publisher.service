@@ -1,0 +1,22 @@
+[Unit]
+Description=Publish Tulu SSP Experiment 2 status to GitHub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/projects/ssp-tulu-github-export/publisher.env
+Environment=CUDA_VISIBLE_DEVICES=
+WorkingDirectory=%h/projects/ssp-tulu-github-export/main
+ExecStart=/usr/bin/flock -n %h/projects/ssp-tulu-github-export/publisher.lock /usr/bin/nice -n 19 /usr/bin/ionice -c 3 /usr/bin/python3 %h/projects/ssp-tulu-github-export/main/ops/github-publisher/publisher.py
+Nice=19
+IOSchedulingClass=idle
+CPUQuota=10%
+MemoryMax=512M
+TimeoutStartSec=24h
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target

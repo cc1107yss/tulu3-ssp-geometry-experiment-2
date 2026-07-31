@@ -1,0 +1,127 @@
+{
+  "current_stage": "train-B2-seed43",
+  "run_started_at": "2026-07-29T21:08:26.121031+08:00",
+  "stages": {
+    "build-trace-bank": {
+      "completed_at": "2026-07-29T21:09:10.800786+08:00",
+      "started_at": "2026-07-29T21:08:48.349207+08:00",
+      "status": "COMPLETE"
+    },
+    "build-train-data": {
+      "completed_at": "2026-07-29T21:08:46.429328+08:00",
+      "started_at": "2026-07-29T21:08:34.298895+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-analysis": {
+      "completed_at": "2026-07-29T21:31:24.820230+08:00",
+      "started_at": "2026-07-29T21:26:34.833299+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-decode-base": {
+      "completed_at": "2026-07-29T21:31:41.217455+08:00",
+      "started_at": "2026-07-29T21:31:26.769815+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-decode-dpo": {
+      "completed_at": "2026-07-29T21:32:13.134406+08:00",
+      "started_at": "2026-07-29T21:31:59.098883+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-decode-rlvr": {
+      "completed_at": "2026-07-29T21:32:28.988470+08:00",
+      "started_at": "2026-07-29T21:32:15.021177+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-decode-sft": {
+      "completed_at": "2026-07-29T21:31:57.167868+08:00",
+      "started_at": "2026-07-29T21:31:43.088218+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-base-natural": {
+      "completed_at": "2026-07-29T21:12:38.033644+08:00",
+      "started_at": "2026-07-29T21:09:12.766679+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-dpo-literal": {
+      "completed_at": "2026-07-29T21:24:04.611918+08:00",
+      "started_at": "2026-07-29T21:23:14.972256+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-dpo-natural": {
+      "completed_at": "2026-07-29T21:19:41.310890+08:00",
+      "started_at": "2026-07-29T21:16:12.479940+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-dpo-semantic-clean": {
+      "completed_at": "2026-07-29T21:25:44.521749+08:00",
+      "started_at": "2026-07-29T21:24:58.066841+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-rlvr-literal": {
+      "completed_at": "2026-07-29T21:24:56.139584+08:00",
+      "started_at": "2026-07-29T21:24:06.730318+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-rlvr-natural": {
+      "completed_at": "2026-07-29T21:23:13.009170+08:00",
+      "started_at": "2026-07-29T21:19:43.292785+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-rlvr-semantic-clean": {
+      "completed_at": "2026-07-29T21:26:32.937045+08:00",
+      "started_at": "2026-07-29T21:25:46.415427+08:00",
+      "status": "COMPLETE"
+    },
+    "frozen-geometry-sft-natural": {
+      "completed_at": "2026-07-29T21:16:10.565809+08:00",
+      "started_at": "2026-07-29T21:12:39.916694+08:00",
+      "status": "COMPLETE"
+    },
+    "preflight": {
+      "completed_at": "2026-07-29T21:08:32.349359+08:00",
+      "started_at": "2026-07-29T21:08:26.121069+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A-seed42": {
+      "completed_at": "2026-07-30T21:28:37.424168+08:00",
+      "started_at": "2026-07-30T15:29:24.827044+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A1-seed42": {
+      "completed_at": "2026-07-31T03:15:58.599509+08:00",
+      "started_at": "2026-07-30T21:28:39.338483+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A2-match-seed42": {
+      "completed_at": "2026-07-31T15:14:13.097319+08:00",
+      "started_at": "2026-07-31T09:15:05.491514+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A2-seed42": {
+      "completed_at": "2026-07-30T15:29:22.872660+08:00",
+      "started_at": "2026-07-30T09:30:21.615146+08:00",
+      "status": "COMPLETE"
+    },
+    "train-B2-seed42": {
+      "completed_at": "2026-07-30T03:31:22.704673+08:00",
+      "started_at": "2026-07-29T21:32:30.906889+08:00",
+      "status": "COMPLETE"
+    },
+    "train-B2-seed43": {
+      "started_at": "2026-07-31T15:14:17.445969+08:00",
+      "status": "RUNNING"
+    },
+    "train-C-match-seed42": {
+      "completed_at": "2026-07-31T09:15:03.655339+08:00",
+      "started_at": "2026-07-31T03:16:00.597737+08:00",
+      "status": "COMPLETE"
+    },
+    "train-C-seed42": {
+      "completed_at": "2026-07-30T09:30:19.712541+08:00",
+      "started_at": "2026-07-30T03:31:26.507012+08:00",
+      "status": "COMPLETE"
+    }
+  },
+  "status": "RUNNING",
+  "updated_at": "2026-07-31T15:14:17.445935+08:00"
+}

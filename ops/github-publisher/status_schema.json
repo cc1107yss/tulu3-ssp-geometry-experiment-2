@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/cc1107yss/tulu3-ssp-geometry-experiment-2/blob/main/ops/github-publisher/status_schema.json",
+  "title": "Experiment 2 live status",
+  "type": "object",
+  "required": ["schema_version", "experiment_id", "observed_at", "pipeline", "progress", "integrity", "health", "current_log", "archive"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "experiment_id": {"const": "experiment-2"},
+    "observed_at": {"type": "string"},
+    "pipeline": {"type": "object"},
+    "progress": {"type": "object"},
+    "integrity": {"type": "object"},
+    "health": {"type": "object"},
+    "completed_training_runs": {"type": "array"},
+    "scientific_summaries": {"type": "object"},
+    "current_log": {"type": "object"},
+    "archive": {"type": "object"}
+  },
+  "additionalProperties": true
+}
