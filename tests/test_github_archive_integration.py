@@ -43,7 +43,8 @@ def test_complete_archive_push_and_idempotency(tmp_path):
     log = experiment / "logs/final-report.log"
     log.parent.mkdir(parents=True, exist_ok=True)
     log.write_text("complete\n", encoding="utf-8")
-    git("init", "-q", "-b", "main", str(experiment))
+    git("init", "-q", str(experiment))
+    git("symbolic-ref", "HEAD", "refs/heads/main", cwd=experiment)
     git("config", "user.name", "fixture", cwd=experiment)
     git("config", "user.email", "fixture@example.com", cwd=experiment)
     git("add", "configs/study.json", cwd=experiment)
@@ -51,7 +52,8 @@ def test_complete_archive_push_and_idempotency(tmp_path):
 
     main_repo = tmp_path / "main"
     remote = tmp_path / "remote.git"
-    git("init", "-q", "-b", "main", str(main_repo))
+    git("init", "-q", str(main_repo))
+    git("symbolic-ref", "HEAD", "refs/heads/main", cwd=main_repo)
     git("config", "user.name", "fixture", cwd=main_repo)
     git("config", "user.email", "fixture@example.com", cwd=main_repo)
     (main_repo / ".gitattributes").write_text(

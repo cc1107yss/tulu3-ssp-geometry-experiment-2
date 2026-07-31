@@ -127,7 +127,8 @@ def test_classification_is_explicit():
 def test_status_push_failure_retains_local_commit(tmp_path):
     repo = tmp_path / "status"
     repo.mkdir()
-    subprocess.run(["git", "init", "-q", "-b", "run-status", str(repo)], check=True)
+    subprocess.run(["git", "init", "-q", str(repo)], check=True)
+    subprocess.run(["git", "-C", str(repo), "symbolic-ref", "HEAD", "refs/heads/run-status"], check=True)
     subprocess.run(["git", "-C", str(repo), "config", "user.name", "fixture"], check=True)
     subprocess.run(["git", "-C", str(repo), "config", "user.email", "fixture@example.com"], check=True)
     (repo / "experiment-2.json").write_text("{}\n", encoding="utf-8")
