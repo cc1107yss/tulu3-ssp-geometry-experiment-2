@@ -71,6 +71,7 @@ def test_snapshot_is_bounded_redacted_and_has_progress(tmp_path):
     assert snapshot["progress"]["global_step"] == 100
     assert snapshot["progress"]["eta_seconds"] > 0
     assert snapshot["integrity"]["study_config_sha256"]
+    assert isinstance(snapshot["health"]["tmux_alive"], bool)
 
 
 def test_redaction_and_tail_limit(tmp_path):
