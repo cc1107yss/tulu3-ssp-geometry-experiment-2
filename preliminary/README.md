@@ -1,18 +1,16 @@
-# GitHub publisher (retired)
+# Archived server snapshot
 
-This utility was used during the live experiment to export read-only status snapshots from the server project into a separate GitHub branch. It is retained for provenance, but it is not part of the public results pipeline.
+This directory is a bounded, privacy-conscious snapshot of the formal run from
+`/home/ai/projects/ssp-tulu-repro`. It is included so that the protocol,
+manifests, frozen analysis, decode diagnostics, compact run metadata, and
+compressed logs can be inspected without server access.
 
-## Current archive policy
+The snapshot was captured while the extended seed runs were still in progress;
+the final server state later reached `behavior-B1-greedy` and failed because
+the evaluation environment lacked `latex2sympy2`. The authoritative completed
+geometry results are unchanged and are summarized in `docs/PRELIMINARY_RESULTS.md`.
 
-- The `run-status` branch has been deleted.
-- The user-level publisher timer and service are stopped and disabled.
-- The public `main` branch is the curated archive; it is not an automatically updating live dashboard.
-- No credentials or private deployment material belong in this repository.
-
-## Historical command
-
-```bash
-python3 ops/github-publisher/publisher.py --dry-run
-```
-
-The publisher never modified experiment parameters or resumed failed jobs. Its `PAUSED`/`FAILED` behavior was observation-only. This documentation is preserved to explain repository history, not to suggest that the publisher is currently active.
+Large private or regenerable artifacts are intentionally excluded: model
+weights, adapters, optimizer checkpoints, raw activation shards, private
+credentials, and oversized point-level tables. The nested paths mirror the
+server experiment root. SHA-256 checksums are provided in `SHA256SUMS`.
