@@ -1,18 +1,18 @@
-# Preliminary server snapshot
+# GitHub publisher (retired)
 
-- Captured from `/home/ai/projects/ssp-tulu-repro` while the formal pipeline was
-  RUNNING on 2026-07-31.
-- Executed source commit: `afdf19bdfb24c445cc757ea1878914d64fa8a6e9`.
-- The snapshot contains processed training/trace data and manifests, preflight
-  and time-governor artifacts, complete stage/status records, compressed logs,
-  frozen analysis except the 599 MB point-level JSONL, frozen decode results,
-  and compact training run metadata.
-- It deliberately excludes adapters, optimizer/intermediate checkpoints, raw
-  activation shards, merged BF16 models and the large point-level file while
-  training is active. The automatic COMPLETE archive handles canonical final
-  adapters and compressed high-granularity results.
-- Every result here is preliminary. The immutable source of formal conclusions
-  will be tag `experiment-2-final-v1`.
+This utility was used during the live experiment to export read-only status snapshots from the server project into a separate GitHub branch. It is retained for provenance, but it is not part of the public results pipeline.
 
-The nested paths mirror the server paths relative to the experiment root so
-that settings and outputs can be inspected without SSH access.
+## Current archive policy
+
+- The `run-status` branch has been deleted.
+- The user-level publisher timer and service are stopped and disabled.
+- The public `main` branch is the curated archive; it is not an automatically updating live dashboard.
+- No credentials or private deployment material belong in this repository.
+
+## Historical command
+
+```bash
+python3 ops/github-publisher/publisher.py --dry-run
+```
+
+The publisher never modified experiment parameters or resumed failed jobs. Its `PAUSED`/`FAILED` behavior was observation-only. This documentation is preserved to explain repository history, not to suggest that the publisher is currently active.

@@ -58,45 +58,45 @@ def main() -> None:
     atomic_json(output / "summary.json", payload)
 
     lines = [
-        "# Tulu-3-8B SSP 复现与四阶段轨迹重组：最终报告",
+        "# Tulu-3-8B SSP Reproduction and Four-Stage Trace Geometry: Final Report",
         "",
-        "## 主要终点",
+        "## Primary endpoints",
         "",
     ]
     if dpo_rlvr:
         lines.extend(
             [
-                f"- DPO→RLVR，末层 MSE@3：{dpo_rlvr['left_mean']:.6g} → "
-                f"{dpo_rlvr['right_mean']:.6g}；差值 "
-                f"{dpo_rlvr['mean_difference']:.6g}，95% CI "
-                f"[{dpo_rlvr['ci95_low']:.6g}, {dpo_rlvr['ci95_high']:.6g}]。",
+                f"- DPO→RLVR final-layer MSE@3: {dpo_rlvr['left_mean']:.6g} → "
+                f"{dpo_rlvr['right_mean']:.6g}; difference "
+                f"{dpo_rlvr['mean_difference']:.6g}, 95% CI "
+                f"[{dpo_rlvr['ci95_low']:.6g}, {dpo_rlvr['ci95_high']:.6g}].",
             ]
         )
     if c_a:
         lines.extend(
             [
-                f"- C→A，末层 MSE@1：{c_a['left_mean']:.6g} → "
-                f"{c_a['right_mean']:.6g}；改善倍数 "
+                f"- C→A final-layer MSE@1: {c_a['left_mean']:.6g} → "
+                f"{c_a['right_mean']:.6g}; improvement factor "
                 f"{c_a['improvement_ratio_left_over_right']:.3g}×。",
             ]
         )
     lines.extend(
         [
             "",
-            "## 行为保持",
+            "## Behavioral preservation",
             "",
-            f"- B2 greedy MATH-500：{100*b2_accuracy:.2f}%。",
-            f"- A greedy MATH-500：{100*a_accuracy:.2f}%。",
-            f"- A−B2：{behavior_delta_pp:+.2f} pp；"
-            f"{'通过' if behavior_delta_pp >= -2 else '未通过'} −2 pp 非退化界。",
+            f"- B2 greedy MATH-500: {100*b2_accuracy:.2f}%.",
+            f"- A greedy MATH-500: {100*a_accuracy:.2f}%.",
+            f"- A−B2: {behavior_delta_pp:+.2f} pp; "
+            f"{'Pass' if behavior_delta_pp >= -2 else 'Fail'} against the −2 pp non-degradation bound.",
             "",
-            "## 可复现性",
+            "## Reproducibility",
             "",
-            "- 所有逐题几何量、bootstrap 汇总、训练日志、adapter、BF16 合并模型、"
-            "量化敏感性、行为生成和 MLP probe 均保存在 `outputs/`。",
-            "- `data/processed/*manifest.json` 记录数据排除与哈希；"
-            "`artifacts/preflight.json` 记录 tokenizer、模型与运行环境契约。",
-            "- 科学阴性结果未触发停止；任何技术失败均由流水线失败标记保留现场。",
+            "- Per-problem geometry, bootstrap summaries, training logs, adapters, merged BF16 models, "
+            "quantization checks, behavior generations, and MLP probes are stored under `outputs/`.",
+            "- `data/processed/*manifest.json` records exclusions and hashes; "
+            "`artifacts/preflight.json` records tokenizer, model, and environment contracts.",
+            "- Scientific null results do not stop the run; technical failures preserve the scene through a pipeline failure marker.",
             "",
         ]
     )
@@ -118,4 +118,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

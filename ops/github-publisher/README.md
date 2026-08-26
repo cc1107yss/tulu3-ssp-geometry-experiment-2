@@ -1,29 +1,18 @@
-# Experiment 2 GitHub publisher
+# GitHub publisher (retired)
 
-该 publisher 从正式实验目录只读采集状态，在独立 export root 中提交并推送。
+This utility was used during the live experiment to export read-only status snapshots from the server project into a separate GitHub branch. It is retained for provenance, but it is not part of the public results pipeline.
 
-## 服务器布局
+## Current archive policy
 
-- 实验：`/home/ai/projects/ssp-tulu-repro`（只读）
-- 导出：`/home/ai/projects/ssp-tulu-github-export`
-- main clone：`$EXPORT_ROOT/main`
-- run-status clone：`$EXPORT_ROOT/run-status`
-- deploy key：`$EXPORT_ROOT/credentials/deploy_key`
+- The `run-status` branch has been deleted.
+- The user-level publisher timer and service are stopped and disabled.
+- The public `main` branch is the curated archive; it is not an automatically updating live dashboard.
+- No credentials or private deployment material belong in this repository.
 
-## 运行
+## Historical command
 
 ```bash
 python3 ops/github-publisher/publisher.py --dry-run
-systemctl --user status ssp-tulu-github-publisher.timer
-journalctl --user -u ssp-tulu-github-publisher.service
 ```
 
-publisher 每小时更新 `run-status/experiment-2.json`。实验 `COMPLETE` 后，
-`final_archive.py` 会将规范结果冻结至 main，推送 tag，再写入最后一份状态。
-
-## 故障约定
-
-- GitHub 不可达：本地状态提交继续保留，下次恢复后补推。
-- 分支分叉：拒绝 force-push，在 publisher state 中报错。
-- `PAUSED/FAILED`：只更新状态，不自动恢复或冻结。
-- 归档失败：保留已构建 staging，后续只重试未完成的 Git/LFS 传输。
+The publisher never modified experiment parameters or resumed failed jobs. Its `PAUSED`/`FAILED` behavior was observation-only. This documentation is preserved to explain repository history, not to suggest that the publisher is currently active.
