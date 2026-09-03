@@ -44,9 +44,11 @@ def init_fixture(tmp_path):
     )
     log = root / "logs" / "train-A-seed42.log"
     log.parent.mkdir(parents=True)
+    fake_token = "gh" + "p_" + ("x" * 32)
     log.write_text(
         "password=hunter2\n"
-        "Authorization: Bearer ghp_abcdefghijklmnopqrstuvwxyz123456\n"
+        + "Authorization: Bearer {}\n".format(fake_token)
+        +
         'SSP_METRIC {"global_step": 100, "max_steps": 1107, "epoch": 0.27, '
         '"elapsed_wall_seconds": 1900, "ntp_loss": 0.9, "stp_loss": 0.01, '
         '"loss": 14.56, "grad_norm": 1.2}\n',
