@@ -34,13 +34,21 @@ NTP loss. Continuous-step and random-step training have nearly identical
 training endpoints; their geometric and behavioral comparison is the relevant
 scientific test.
 
+The completed seed-42 SSP geometry endpoint is strongly boundary-dependent.
+At the reserved training marker, A reduces final-layer MSE@1 from 0.4824 (C) to
+0.00183 (264× lower; 95% CI for A−C [-0.5020, -0.4603]). When evaluated at
+natural paragraph boundaries, A is worse than C: 1.6576 versus 0.6481 (A−C
+1.0095; 95% CI [0.9284, 1.0907]). The port therefore reproduces a strong
+marker-local effect, not a boundary-invariant semantic prediction advantage.
+
 ## What is included
 
 - Frozen Base/SFT/DPO/RLVR geometry at layers 4, 8, 12, 16, 20, 24, 28, and 32.
 - Natural, literal-marker, and semantic-clean boundary analyses.
 - DPO/RLVR source-balanced MATH-500 trace bank and reproducible manifests.
 - SSP conditions B1, B2, C, A2, A, C-match, and A2-match for seed 42.
-- Additional B2/C/A2/A training seeds 43 and 44, with merged-model validation.
+- Additional B2/C/A2/A training seeds 43 and 44 and their merge manifests;
+  fixed-sample merge validation was completed for the seed-42 grid.
 - Grid geometry, decode diagnostics, and compressed preliminary server provenance.
 - Training, extraction, analysis, merge-validation, and MLP probe code.
 
@@ -56,7 +64,8 @@ it does not invalidate the completed geometry or training artifacts.
 The old hourly `run-status` branch and publisher were intentionally retired
 after archival. The repository's `main` branch is now a static research archive.
 See [`docs/RESULTS.md`](docs/RESULTS.md) for the completed-results matrix and
-[`docs/EXPERIMENT_PLAN.md`](docs/EXPERIMENT_PLAN.md) for the protocol.
+[`docs/EXPERIMENT_PLAN.md`](docs/EXPERIMENT_PLAN.md) for the protocol. The exact
+public/server boundary is listed in [`docs/ARCHIVE_INVENTORY.md`](docs/ARCHIVE_INVENTORY.md).
 
 ## Reproducing the pipeline
 
@@ -82,7 +91,7 @@ committed to GitHub.
 ```text
 configs/                  Frozen study configuration
 docs/                     Protocol, results, and archive notes
-preliminary/              Bounded compressed server snapshot and checksums
+preliminary/              Curated completed-result snapshot and checksums
 scripts/                  Data, training, geometry, evaluation, and validation
 ssp_tulu/                 Reusable Python implementation
 tests/                    Unit and archive-integration tests

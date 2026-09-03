@@ -1,7 +1,13 @@
 {
-  "current_stage": "train-B2-seed43",
+  "current_stage": "behavior-B1-greedy",
   "run_started_at": "2026-07-29T21:08:26.121031+08:00",
   "stages": {
+    "behavior-B1-greedy": {
+      "exit_code": 1,
+      "failed_at": "2026-08-02T16:31:11.712609+08:00",
+      "started_at": "2026-08-02T16:30:59.206589+08:00",
+      "status": "FAILED"
+    },
     "build-trace-bank": {
       "completed_at": "2026-07-29T21:09:10.800786+08:00",
       "started_at": "2026-07-29T21:08:48.349207+08:00",
@@ -77,6 +83,186 @@
       "started_at": "2026-07-29T21:12:39.916694+08:00",
       "status": "COMPLETE"
     },
+    "grid-analysis-natural-transfer": {
+      "completed_at": "2026-08-02T16:29:07.529916+08:00",
+      "started_at": "2026-08-02T16:27:07.096938+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-analysis-reserved": {
+      "completed_at": "2026-08-02T16:27:05.305379+08:00",
+      "started_at": "2026-08-02T16:16:49.704386+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-decode-A": {
+      "completed_at": "2026-08-02T16:30:42.138916+08:00",
+      "started_at": "2026-08-02T16:30:28.271988+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-decode-A1": {
+      "completed_at": "2026-08-02T16:30:57.430033+08:00",
+      "started_at": "2026-08-02T16:30:43.932890+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-decode-A2": {
+      "completed_at": "2026-08-02T16:30:26.471176+08:00",
+      "started_at": "2026-08-02T16:30:12.766830+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-decode-B1": {
+      "completed_at": "2026-08-02T16:29:38.095015+08:00",
+      "started_at": "2026-08-02T16:29:09.375057+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-decode-B2": {
+      "completed_at": "2026-08-02T16:29:55.081045+08:00",
+      "started_at": "2026-08-02T16:29:39.875263+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-decode-C": {
+      "completed_at": "2026-08-02T16:30:10.962180+08:00",
+      "started_at": "2026-08-02T16:29:56.926170+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A-natural-sensitivity": {
+      "completed_at": "2026-08-02T16:14:32.623176+08:00",
+      "started_at": "2026-08-02T16:12:21.368043+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A-reserved": {
+      "completed_at": "2026-08-02T15:50:54.816691+08:00",
+      "started_at": "2026-08-02T15:46:04.064070+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A1-natural-sensitivity": {
+      "completed_at": "2026-08-02T16:16:47.858002+08:00",
+      "started_at": "2026-08-02T16:14:34.491149+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A1-reserved": {
+      "completed_at": "2026-08-02T15:55:49.598702+08:00",
+      "started_at": "2026-08-02T15:50:56.542705+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A2-match-reserved": {
+      "completed_at": "2026-08-02T16:05:38.787181+08:00",
+      "started_at": "2026-08-02T16:00:45.832464+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A2-natural-sensitivity": {
+      "completed_at": "2026-08-02T16:12:19.541830+08:00",
+      "started_at": "2026-08-02T16:10:06.399615+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-A2-reserved": {
+      "completed_at": "2026-08-02T15:46:02.196926+08:00",
+      "started_at": "2026-08-02T15:41:09.604426+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-B1-reserved": {
+      "completed_at": "2026-08-02T15:31:21.329751+08:00",
+      "started_at": "2026-08-02T15:27:50.750325+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-B2-natural-sensitivity": {
+      "completed_at": "2026-08-02T16:07:52.017894+08:00",
+      "started_at": "2026-08-02T16:05:40.497019+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-B2-reserved": {
+      "completed_at": "2026-08-02T15:36:15.193683+08:00",
+      "started_at": "2026-08-02T15:31:23.128402+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-C-match-reserved": {
+      "completed_at": "2026-08-02T16:00:44.039661+08:00",
+      "started_at": "2026-08-02T15:55:51.403022+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-C-natural-sensitivity": {
+      "completed_at": "2026-08-02T16:10:04.619100+08:00",
+      "started_at": "2026-08-02T16:07:53.829202+08:00",
+      "status": "COMPLETE"
+    },
+    "grid-geometry-C-reserved": {
+      "completed_at": "2026-08-02T15:41:07.858098+08:00",
+      "started_at": "2026-08-02T15:36:16.965694+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A-seed42": {
+      "completed_at": "2026-08-02T15:10:48.301205+08:00",
+      "started_at": "2026-08-02T15:10:06.344270+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A-seed43": {
+      "completed_at": "2026-08-02T15:21:37.282951+08:00",
+      "started_at": "2026-08-02T15:20:05.321417+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A-seed44": {
+      "completed_at": "2026-08-02T15:27:48.792935+08:00",
+      "started_at": "2026-08-02T15:26:15.449864+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A1-seed42": {
+      "completed_at": "2026-08-02T15:12:07.770731+08:00",
+      "started_at": "2026-08-02T15:11:12.361543+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A2-match-seed42": {
+      "completed_at": "2026-08-02T15:15:17.198451+08:00",
+      "started_at": "2026-08-02T15:14:15.019218+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A2-seed42": {
+      "completed_at": "2026-08-02T15:09:39.863683+08:00",
+      "started_at": "2026-08-02T15:08:56.718500+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A2-seed43": {
+      "completed_at": "2026-08-02T15:20:03.442692+08:00",
+      "started_at": "2026-08-02T15:18:25.250339+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-A2-seed44": {
+      "completed_at": "2026-08-02T15:26:13.631460+08:00",
+      "started_at": "2026-08-02T15:24:45.445289+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-B2-seed42": {
+      "completed_at": "2026-08-02T15:06:55.297051+08:00",
+      "started_at": "2026-08-02T15:06:02.542613+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-B2-seed43": {
+      "completed_at": "2026-08-02T15:16:53.101955+08:00",
+      "started_at": "2026-08-02T15:15:50.264048+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-B2-seed44": {
+      "completed_at": "2026-08-02T15:23:11.252730+08:00",
+      "started_at": "2026-08-02T15:21:39.195833+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-C-match-seed42": {
+      "completed_at": "2026-08-02T15:13:41.851238+08:00",
+      "started_at": "2026-08-02T15:12:36.966400+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-C-seed42": {
+      "completed_at": "2026-08-02T15:08:32.569846+08:00",
+      "started_at": "2026-08-02T15:07:50.372396+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-C-seed43": {
+      "completed_at": "2026-08-02T15:18:23.457927+08:00",
+      "started_at": "2026-08-02T15:16:54.903252+08:00",
+      "status": "COMPLETE"
+    },
+    "merge-C-seed44": {
+      "completed_at": "2026-08-02T15:24:43.584024+08:00",
+      "started_at": "2026-08-02T15:23:13.130318+08:00",
+      "status": "COMPLETE"
+    },
     "preflight": {
       "completed_at": "2026-07-29T21:08:32.349359+08:00",
       "started_at": "2026-07-29T21:08:26.121069+08:00",
@@ -85,6 +271,16 @@
     "train-A-seed42": {
       "completed_at": "2026-07-30T21:28:37.424168+08:00",
       "started_at": "2026-07-30T15:29:24.827044+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A-seed43": {
+      "completed_at": "2026-08-01T15:10:17.064386+08:00",
+      "started_at": "2026-08-01T09:11:14.256855+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A-seed44": {
+      "completed_at": "2026-08-02T15:06:00.634556+08:00",
+      "started_at": "2026-08-02T09:06:58.679923+08:00",
       "status": "COMPLETE"
     },
     "train-A1-seed42": {
@@ -102,14 +298,30 @@
       "started_at": "2026-07-30T09:30:21.615146+08:00",
       "status": "COMPLETE"
     },
+    "train-A2-seed43": {
+      "completed_at": "2026-08-01T09:11:12.407006+08:00",
+      "started_at": "2026-08-01T03:12:03.625835+08:00",
+      "status": "COMPLETE"
+    },
+    "train-A2-seed44": {
+      "completed_at": "2026-08-02T09:06:56.797081+08:00",
+      "started_at": "2026-08-02T03:08:02.225805+08:00",
+      "status": "COMPLETE"
+    },
     "train-B2-seed42": {
       "completed_at": "2026-07-30T03:31:22.704673+08:00",
       "started_at": "2026-07-29T21:32:30.906889+08:00",
       "status": "COMPLETE"
     },
     "train-B2-seed43": {
+      "completed_at": "2026-07-31T21:13:00.643477+08:00",
       "started_at": "2026-07-31T15:14:17.445969+08:00",
-      "status": "RUNNING"
+      "status": "COMPLETE"
+    },
+    "train-B2-seed44": {
+      "completed_at": "2026-08-01T21:09:03.703041+08:00",
+      "started_at": "2026-08-01T15:10:18.992428+08:00",
+      "status": "COMPLETE"
     },
     "train-C-match-seed42": {
       "completed_at": "2026-07-31T09:15:03.655339+08:00",
@@ -120,8 +332,53 @@
       "completed_at": "2026-07-30T09:30:19.712541+08:00",
       "started_at": "2026-07-30T03:31:26.507012+08:00",
       "status": "COMPLETE"
+    },
+    "train-C-seed43": {
+      "completed_at": "2026-08-01T03:12:01.729301+08:00",
+      "started_at": "2026-07-31T21:13:02.579757+08:00",
+      "status": "COMPLETE"
+    },
+    "train-C-seed44": {
+      "completed_at": "2026-08-02T03:08:00.144478+08:00",
+      "started_at": "2026-08-01T21:09:05.602948+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-A-seed42": {
+      "completed_at": "2026-08-02T15:11:10.486319+08:00",
+      "started_at": "2026-08-02T15:10:50.242264+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-A1-seed42": {
+      "completed_at": "2026-08-02T15:12:35.091389+08:00",
+      "started_at": "2026-08-02T15:12:09.604478+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-A2-match-seed42": {
+      "completed_at": "2026-08-02T15:15:48.331632+08:00",
+      "started_at": "2026-08-02T15:15:18.974847+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-A2-seed42": {
+      "completed_at": "2026-08-02T15:10:04.351743+08:00",
+      "started_at": "2026-08-02T15:09:41.879332+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-B2-seed42": {
+      "completed_at": "2026-08-02T15:07:48.432127+08:00",
+      "started_at": "2026-08-02T15:06:57.204619+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-C-match-seed42": {
+      "completed_at": "2026-08-02T15:14:13.062123+08:00",
+      "started_at": "2026-08-02T15:13:43.688603+08:00",
+      "status": "COMPLETE"
+    },
+    "validate-merge-C-seed42": {
+      "completed_at": "2026-08-02T15:08:54.706517+08:00",
+      "started_at": "2026-08-02T15:08:34.466416+08:00",
+      "status": "COMPLETE"
     }
   },
-  "status": "RUNNING",
-  "updated_at": "2026-07-31T15:14:17.445935+08:00"
+  "status": "FAILED",
+  "updated_at": "2026-08-02T16:31:11.712581+08:00"
 }

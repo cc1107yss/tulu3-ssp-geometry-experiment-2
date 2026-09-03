@@ -37,8 +37,9 @@ loss components.
 | C-match | C with matched supervision | 1.0213 | 1.0889 | 36.336 | 5.98 h |
 | A2-match | A2 with matched supervision | 0.9356 | 0.00817 | 16.650 | 5.98 h |
 
-Seed 43 and 44 completed for B2, C, A2, and A. Their adapters were merged and
-validated; the archive does not overstate them with unaggregated point claims.
+Seed 43 and 44 completed for B2, C, A2, and A, and their adapters were merged.
+Fixed-sample merged-vs-adapter validation was run for seed 42 only. Exact
+multi-seed endpoints and SSP geometry results are reported in `docs/RESULTS.md`.
 
 ## Interpretation
 
@@ -46,4 +47,7 @@ The completed evidence supports cumulative final-layer geometry changes through
 Base→SFT→DPO, while RLVR adds only a weak correction relative to DPO. Step-level
 STP is much easier to optimize than random-token STP. A and A2 have nearly
 identical training endpoints, so continuity must be judged by the post-training
-geometry and behavior endpoints rather than training loss alone.
+geometry and behavior endpoints rather than training loss alone. The completed
+geometry evaluation shows a large A-over-C advantage at the reserved marker but
+a reversal at natural boundaries; this is evidence of marker-local learning,
+not yet of boundary-invariant semantic transfer.

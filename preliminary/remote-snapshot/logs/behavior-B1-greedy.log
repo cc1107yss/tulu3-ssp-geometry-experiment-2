@@ -1,0 +1,12 @@
+2026-08-02T16:30:59+08:00 STAGE_START stage=behavior-B1-greedy command=bash scripts/evaluate_behavior.sh /home/ai/projects/reasoning-geometry-pilot/models/Meta-Llama-3.1-8B B1 greedy outputs/behavior/B1/greedy configs/study.json
+/home/ai/limit-of-RLVR/.venv/lib/python3.10/site-packages/vllm/connections.py:8: RuntimeWarning: Failed to read commit hash:
+No module named 'vllm._version'
+  from vllm.version import __version__ as VLLM_VERSION
+Traceback (most recent call last):
+  File "/home/ai/limit-of-RLVR/math/examples/math_eval/math_eval.py", line 12, in <module>
+    from evaluate import evaluate
+  File "/home/ai/limit-of-RLVR/math/examples/math_eval/evaluate.py", line 9, in <module>
+    from grader import *
+  File "/home/ai/limit-of-RLVR/math/examples/math_eval/grader.py", line 11, in <module>
+    from latex2sympy2 import latex2sympy
+ModuleNotFoundError: No module named 'latex2sympy2'
